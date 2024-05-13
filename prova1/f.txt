@@ -1,0 +1,21 @@
+n=int(input())
+kang=[]
+for i in range(n):
+    kang.append(int(input()))
+
+limite=n//2
+kang.sort()
+
+i=0
+
+visivel=n
+
+for j in range(limite,n):
+    if i>=limite:
+        break
+
+    if kang[i]*2<=kang[j]:
+        visivel-=1
+        i+=1
+
+print(visivel)

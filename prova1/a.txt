@@ -1,0 +1,9 @@
+
+t=int(input())
+for i in range(t):
+    N=list(map(int,input().split()))
+
+    N.sort()
+
+    print(f'Case {i+1}: {N[1]}')
+

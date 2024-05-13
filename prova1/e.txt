@@ -1,0 +1,30 @@
+import sys
+
+def prox_numero(x,a,b,N):
+    n=(a*x*x+b)%N
+    return n
+
+while True:
+    arr=sys.stdin.readline().strip()
+    if arr=='0':
+        break
+    
+    N,a,b=map(int,arr.split())
+    count=0
+
+    T=prox_numero(0,a,b,N)
+
+    L=prox_numero(0,a,b,N)
+    L=prox_numero(L,a,b,N)
+
+    while T!=L:
+        T=prox_numero(T,a,b,N)
+        L=prox_numero(prox_numero(L,a,b,N),a,b,N)
+    count+=1
+    L=prox_numero(L,a,b,N)
+
+    while T!=L:
+        L=prox_numero(L,a,b,N)
+        count+=1
+    print(N-count)
+    
