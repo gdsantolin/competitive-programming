@@ -37,4 +37,4 @@ int main(){
         } 
         cout << endl << "Remaining card: " <<  bar.front() << endl;
     }
-}
+}s
